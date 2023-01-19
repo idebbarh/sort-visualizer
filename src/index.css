@@ -1,13 +1,187 @@
+:root {
+  --text-color: black;
+  --header-background-color: white;
+  --body-background-color: #d2dce7;
+  --main-btn-color: #4baeff;
+  --container-color: #00afd8;
+  --comparing-color: #cc0f35;
+  --right-place-color: #48c78e;
+  --pivot-color: #ffe08a;
+  --parent-color: #f8a964;
+  --gap-color:#002654;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
+.header {
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+  padding: 0 30px;
+  color: var(--text-color);
+  background-color: var(--header-background-color);
+  gap: 15px;
+}
+@media (max-width:1280px) {
+  .header{
+    flex-direction: column;
+    padding: 15px 30px;
+    gap: 10px;
+  }
+}
+.header .header--logo {
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.header .header--logo .logo--icon img {
+  position: relative;
+  width: 40px;
+  top: 2px;
+}
+.header .header--logo .logo--text {
+  font-size: 23px;
+  font-weight: 700;
+}
+.header .header--btns {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+@media (max-width:1024px) {
+  .header .header--btns{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.header .header--btns .btn {
+  background: none;
+  padding: 10px 20px;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.header .header--btns .btn:not(:first-child) {
+  border-radius: 20px;
+}
+.header .header--btns .btn:not(:first-child):hover,
+.header .header--btns .btn:not(:first-child).active {
+  background-color: var(--body-background-color);
+}
+.header .header--btns .btns--start-sort {
+  background-color: var(--main-btn-color);
+  color: var(--header-background-color);
+  border-radius: 6px;
+}
+.header .header--btns .btns--start-sort:hover {
+  transform: scale(110%);
+}
+@media (max-width:1024px) {
+  .header .header--btns .btns--start-sort{
+    width: 100%;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  }
+}
+.header .array-setting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.header .array-setting label {
+  font-size: 16px;
+  font-weight: 600;
+}
+.main {
+  background-color: var(--body-background-color);
+  height: calc(100vh - 200px);
+  padding: 60px 30px;
+}
+@media (max-width:1280px) {
+  .main{
+    padding: 40px 20px;
+    height: calc(100vh - 212px);
+  }
+}
+@media (max-width:1024px) {
+  .main{
+    padding: 40px 20px;
+    height: calc(100vh - 285px);
+  }
+}
+.nums-container {
+  width: 100%;
+  height: calc(100% - 120px);
+  display: flex;
+  gap: 5px;
+  align-items: flex-end;
+}
+.nums-container .num-container {
+  flex: 1;
+  background-color: var(--container-color);
+}
+.nums-container .num-container.right-place {
+  background-color: var(--right-place-color);
+}
+.nums-container .num-container.pivot {
+  background-color: var(--pivot-color);
+}
+.nums-container .num-container.parent {
+  background-color: var(--parent-color);
+}
+.nums-container .num-container.gap-elem{
+  background-color: var(--gap-color);
+}
+.nums-container .num-container.right-place {
+  background-color: var(--right-place-color);
+}
+.nums-container .num-container.is-comparing {
+  background-color: var(--comparing-color) !important;
+}
+.generate-new-array-btn {
+  transition: all 0.3s ease;
+  margin: 15px auto 0 auto;
+  border: 3px solid #485fc7;
+  border-radius: 9999px;
+  -webkit-border-radius: 9999px;
+  -moz-border-radius: 9999px;
+  -ms-border-radius: 9999px;
+  -o-border-radius: 9999px;
+  padding: 15px 20px;
+  color: #485fc7;
+  width: fit-content;
+  display: block;
+  background: none;
+  font-size: 23px;
+  font-weight: bold;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  cursor: pointer;
+}
+.generate-new-array-btn:hover {
+  background-color: #485fc7;
+  color: #fff;
+}
+.algo-info {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.algo-info span {
+  color: #485fc7;
+}
+.disable {
+  pointer-events: none;
 }
